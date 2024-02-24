@@ -1,4 +1,4 @@
-import { LocaleStateType } from "@/src/types"
+import { LocaleStateType } from "@/src/types/general/type"
 import { UPDATE_ADMIN_LOCALE_SLUG, UPDATE_SITE_LOCALE_SLUG } from "../ActionTypes"
 
 const updateSiteLocaleSlug = (data: LocaleStateType[]) => {

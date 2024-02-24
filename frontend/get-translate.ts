@@ -1,5 +1,4 @@
 import 'server-only'
-import { LocaleType } from './src/types'
 
 // We enumerate all dictionaries here for better linting and typescript support
 // We also get the default import for cleaner types

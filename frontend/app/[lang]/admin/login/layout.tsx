@@ -1,6 +1,6 @@
 import { getTranslate } from '@/get-translate';
 import { AdminLoginLayout } from '@/src/admin/layout';
-import { LocaleType } from '@/src/types';
+import { LocaleType } from '@/src/types/general/type';
 import { Metadata } from 'next';
 import React from 'react'
 

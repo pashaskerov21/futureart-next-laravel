@@ -1,7 +1,7 @@
 import React from 'react'
-import { LocaleType } from '@/src/types'
 import { AdminDashboardLayout } from '@/src/admin/layout'
 import { getTranslate } from '@/get-translate';
+import { LocaleType } from '@/src/types/general/type';
 
 
 const AdminDashboard = async ({ params: { lang } }: { params: { lang: LocaleType } }) => {

@@ -3,13 +3,14 @@ import React, { Fragment, useEffect, useState } from 'react'
 import Link from 'next/link';
 import { i18n } from '@/i18n-config';
 import { updateAdminLocaleSlug } from '@/src/redux/actions/LocaleAction';
-import { AdminUserDataType, BreadCrumbType, LocaleStateType, LocaleType } from '@/src/types'
 import { useDispatch } from 'react-redux';
 import { IoChevronForwardSharp } from "react-icons/io5";
 import { UserEditForm } from '../form';
 import { useSessionStorage } from 'usehooks-ts';
 import { useRouter } from 'next/navigation';
 import { User } from '../class';
+import { BreadCrumbType, LocaleStateType, LocaleType } from '@/src/types/general/type';
+import { AdminUserDataType } from '@/src/types/data/type';
 
 type LayoutProps = {
     activeLocale: LocaleType,

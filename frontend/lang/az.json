@@ -33,6 +33,7 @@
         "actions": "Əməliyyatlar",
         "email_exist": "Bu e-mail istifadə olunub",
         "type": "Növ",
-        "site_settings": "Sayt tənzimləmələri"
+        "site_settings": "Sayt tənzimləmələri",
+        "menu": "Menyu"
     }
 }

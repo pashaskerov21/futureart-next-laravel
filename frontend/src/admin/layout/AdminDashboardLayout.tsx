@@ -2,8 +2,8 @@
 import React, { useEffect } from 'react'
 import { i18n } from '@/i18n-config';
 import { updateAdminLocaleSlug } from '@/src/redux/actions/LocaleAction';
-import { LocaleStateType, LocaleType } from '@/src/types';
 import { useDispatch } from 'react-redux';
+import { LocaleStateType, LocaleType } from '@/src/types/general/type';
 
 type LayoutProps = {
     activeLocale: LocaleType,

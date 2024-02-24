@@ -1,11 +1,8 @@
-import { LocaleType } from '@/src/types';
 import Link from 'next/link';
 import React from 'react'
 import { FaXmark } from "react-icons/fa6";
-import { HiMiniUsers } from "react-icons/hi2";
-import { FaGear } from "react-icons/fa6";
-import { FaHome } from "react-icons/fa";
 import sidebarData from './SidebarData';
+import { LocaleType } from '@/src/types/general/type';
 
 type SidebarProps = {
   activeLocale: LocaleType,

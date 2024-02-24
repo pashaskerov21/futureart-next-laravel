@@ -1,11 +1,12 @@
 'use client'
 import React from 'react'
 import * as Yup from 'yup'
-import { AdminUserDataType, LocaleType } from '@/src/types'
 import { useRouter } from 'next/navigation'
 import { Field, Form, Formik, FormikHelpers } from 'formik'
 import Swal from 'sweetalert2'
 import { User } from '../../class'
+import { LocaleType } from '@/src/types/general/type'
+import { AdminUserDataType } from '@/src/types/data/type'
 
 type FormProps = {
     activeLocale: LocaleType,
@@ -38,7 +39,7 @@ const UserAddForm: React.FC<FormProps> = ({
         email: Yup.string().email().required(),
         password: Yup.string().required(),
         password_confirm: Yup.string().oneOf([Yup.ref('password')]).required(),
-    })
+    });
 
     const onSubmit = async (values: UserAddFormType, actions: FormikHelpers<UserAddFormType>) => {
         const emailStatus: AdminUserDataType | undefined = adminUsers.find((data) => data.email === values.email);

@@ -1,6 +1,7 @@
 import { FaHome } from "react-icons/fa";
 import { FaGear } from "react-icons/fa6";
 import { HiMiniUsers } from "react-icons/hi2";
+import { FaBars } from "react-icons/fa";
 
 const sidebarData: Array<{
     id: number,
@@ -18,6 +19,12 @@ const sidebarData: Array<{
             title: 'dashboard',
             url: ``,
             icon: FaHome,
+        },
+        {
+            id: 2,
+            title: 'menu',
+            url: `menu`,
+            icon: FaBars,
         },
         {
             id: 2,

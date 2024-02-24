@@ -1,13 +1,14 @@
 'use client'
 import * as Yup from 'yup'
 import Swal from 'sweetalert2';
-import { AdminUserDataType, LocaleType } from '@/src/types';
 import { Field, Form, Formik, FormikHelpers } from 'formik';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useSessionStorage } from 'usehooks-ts';
 import { User } from '../../class';
+import { LocaleType } from '@/src/types/general/type';
+import { AdminUserDataType } from '@/src/types/data/type';
 
 
 type FormProps = {

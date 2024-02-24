@@ -5,9 +5,10 @@ import { HiMiniBars3 } from "react-icons/hi2";
 import { FiSun } from "react-icons/fi";
 import { RiAccountCircleFill } from "react-icons/ri";
 import { MdLogout } from "react-icons/md";
-import { AdminUserDataType, LocaleStateType, LocaleType, RootStateType } from '@/src/types';
 import { HiChevronDown } from "react-icons/hi";
 import { useSelector } from 'react-redux';
+import { LocaleStateType, LocaleType, ReduxRootStateType } from '@/src/types/general/type';
+import { AdminUserDataType } from '@/src/types/data/type';
 
 type NavbarProps = {
     activeLocale: LocaleType,
@@ -40,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({
         })
     };
 
-    const adminLocaleStateData: LocaleStateType[] = useSelector((state: RootStateType) => state.localeState.admin);
+    const adminLocaleStateData: LocaleStateType[] = useSelector((state: ReduxRootStateType) => state.localeState.admin);
     return (
         <div className="navbar-custom">
             <div className="topbar container-fluid">

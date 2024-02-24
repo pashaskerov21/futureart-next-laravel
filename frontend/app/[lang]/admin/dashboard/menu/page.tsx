@@ -1,19 +1,16 @@
 import React from 'react'
 import { getTranslate } from '@/get-translate';
 import { Metadata } from 'next';
-import { AdminMainLayout } from '@/src/admin/layout';
 import { LocaleType } from '@/src/types/general/type';
+import { MenuIndexLayout } from '@/src/admin/layout';
 
 export async function generateMetadata({ params: { lang } }: { params: { lang: LocaleType } }): Promise<Metadata> {
     try {
         const t = await getTranslate(lang);
         const adminDictionary = t.admin;
-        const pageTitle = adminDictionary['dashboard'];
+        const pageTitle = `Admin | ${adminDictionary['menu']}`;
         return {
             title: pageTitle,
-            icons: {
-                icon: '/admin/favicon.ico'
-            },
         };
     } catch (error) {
         return {
@@ -23,17 +20,17 @@ export async function generateMetadata({ params: { lang } }: { params: { lang: L
 }
 
 
-const AdminLayout = async ({ children, params: { lang } }: { children: React.ReactNode; params: { lang: LocaleType }; }) => {
+const SiteMenu = async ({ params: { lang } }: { params: { lang: LocaleType } }) => {
     try {
         const t = await getTranslate(lang);
         const adminDictionary = t.admin;
         return (
-            <AdminMainLayout
-                activeLocale={lang}
-                adminDictionary={adminDictionary}
-            >
-                {children}
-            </AdminMainLayout>
+            <>
+                <MenuIndexLayout
+                    activeLocale={lang}
+                    adminDictionary={adminDictionary}
+                />
+            </>
         )
     } catch {
         return (
@@ -42,4 +39,4 @@ const AdminLayout = async ({ children, params: { lang } }: { children: React.Rea
     }
 }
 
-export default AdminLayout
+export default SiteMenu

@@ -1,7 +1,7 @@
 import { Reducer } from "react"
 import { UPDATE_ADMIN_LOCALE_SLUG, UPDATE_SITE_LOCALE_SLUG } from "../ActionTypes"
-import { LocaleStateType } from "@/src/types"
 import { i18n } from "@/i18n-config"
+import { LocaleStateType } from "@/src/types/general/type"
 
 type InitialStateType = {
     admin: LocaleStateType[],

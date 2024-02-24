@@ -1,8 +1,8 @@
 import React from 'react'
 import { getTranslate } from '@/get-translate';
-import { LocaleType } from '@/src/types';
 import { Metadata } from 'next';
 import AdminAccountLayout from '@/src/admin/layout/AdminAccountLayout';
+import { LocaleType } from '@/src/types/general/type';
 
 export async function generateMetadata({ params: { lang } }: { params: { lang: LocaleType } }): Promise<Metadata> {
     try {

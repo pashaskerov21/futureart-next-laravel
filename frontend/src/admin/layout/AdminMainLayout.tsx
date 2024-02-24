@@ -1,5 +1,4 @@
 'use client'
-import { AdminUserDataType, LocaleType } from '@/src/types';
 import React, { useCallback, useEffect, useState } from 'react';
 import '../assets/css/styles.min.css';
 import '../assets/css/custom.css';
@@ -11,6 +10,8 @@ import { useSessionStorage } from 'usehooks-ts';
 import { usePathname, useRouter } from 'next/navigation';
 import Swal from 'sweetalert2';
 import { User } from '../class';
+import { LocaleType } from '@/src/types/general/type';
+import { AdminUserDataType } from '@/src/types/data/type';
 
 type LayoutProps = {
   activeLocale: LocaleType,
@@ -139,6 +140,8 @@ const AdminMainLayout: React.FC<LayoutProps> = ({ activeLocale, children, adminD
           }
           {sidebarShow && <div id="custom-backdrop" className="offcanvas-backdrop fade show" onClick={toggleSidebar}></div>}
         </Provider>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossOrigin="anonymous"></script>
       </body>
     </html>
   )

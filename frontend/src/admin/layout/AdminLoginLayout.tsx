@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import '../assets/css/styles.min.css';
 import '../assets/css/custom.css';
-import { LocaleType } from '@/src/types';
 import { useSessionStorage } from 'usehooks-ts';
+import { LocaleType } from '@/src/types/general/type';
 
 type LayoutProps = {
   activeLocale: LocaleType,

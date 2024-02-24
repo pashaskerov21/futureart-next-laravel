@@ -1,7 +1,7 @@
 import React from 'react'
-import { LocaleType } from '@/src/types';
 import { UserLoginForm } from '@/src/admin/form';
 import { getTranslate } from '@/get-translate';
+import { LocaleType } from '@/src/types/general/type';
 
 
 const AdminLogin = async ({ params: { lang } }: { params: { lang: LocaleType } }) => {

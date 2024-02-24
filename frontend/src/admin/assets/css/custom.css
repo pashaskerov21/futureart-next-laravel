@@ -11,3 +11,13 @@
     align-items: center;
     gap: 10px
 }
+textarea,
+textarea.form-control{
+    min-height: 150px;
+}
+.image_value{
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}

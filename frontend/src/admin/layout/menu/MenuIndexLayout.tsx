@@ -1,15 +1,12 @@
 'use client'
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import Link from 'next/link';
 import { i18n } from '@/i18n-config';
 import { updateAdminLocaleSlug } from '@/src/redux/actions/LocaleAction';
 import { useDispatch } from 'react-redux';
 import { IoChevronForwardSharp } from "react-icons/io5";
 import { useRouter } from 'next/navigation';
-import { Settings, User } from '../../class';
-import { SiteSettingEditForm } from '../../form';
 import { BreadCrumbType, LocaleStateType, LocaleType } from '@/src/types/general/type';
-import { SiteSettingDataType, SiteSettingTranslateDataType } from '@/src/types/data/type';
 
 type LayoutProps = {
     activeLocale: LocaleType,
@@ -17,8 +14,8 @@ type LayoutProps = {
 }
 
 const AdminUsersIndexLayout: React.FC<LayoutProps> = ({ activeLocale, adminDictionary }) => {
-    const path: string = 'admin/dashboard/settings';
-    const title: string = adminDictionary['site_settings'];
+    const path: string = 'admin/dashboard/menu';
+    const title: string = adminDictionary['menu'];
     const dispatch = useDispatch();
     const localeSlugs: LocaleStateType[] = i18n.locales.map((locale) => {
         return {
@@ -44,27 +41,9 @@ const AdminUsersIndexLayout: React.FC<LayoutProps> = ({ activeLocale, adminDicti
 
 
     const router = useRouter();
-    const setting = new Settings();
 
-    const [settingsData, setSettingsData] = useState<SiteSettingDataType>();
-    const [settingsTranslateData, setSettingsTranslateData] = useState<SiteSettingTranslateDataType[]>();
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const response: {
-                main: SiteSettingDataType,
-                translate: SiteSettingTranslateDataType[]
-            } = await setting.active(1);
-            if (response) {
-                setSettingsData(response.main);
-                setSettingsTranslateData(response.translate);
-            }
-        }
-        fetchData();
-    }, []);
-
-   
-
+    
     return (
         <>
             <div className="row">
@@ -94,16 +73,6 @@ const AdminUsersIndexLayout: React.FC<LayoutProps> = ({ activeLocale, adminDicti
                     </div>
                 </div>
             </div >
-            {
-                settingsData && settingsTranslateData && settingsTranslateData.length === i18n.locales.length && (
-                    <SiteSettingEditForm
-                        activeLocale={activeLocale}
-                        adminDictionary={adminDictionary}
-                        settingsData={settingsData}
-                        settingsTranslateData={settingsTranslateData}
-                    />
-                )
-            }
         </>
     )
 }

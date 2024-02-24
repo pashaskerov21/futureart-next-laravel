@@ -33,6 +33,7 @@
         "actions": "Actions",
         "email_exist": "This e-mail has been used",
         "type": "Type",
-        "site_settings": "Site settings"
+        "site_settings": "Site settings",
+        "menu": "Menu"
     }
 }

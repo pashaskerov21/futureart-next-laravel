@@ -3,7 +3,6 @@ import React, { Fragment, useEffect, useState } from 'react'
 import Link from 'next/link';
 import { i18n } from '@/i18n-config';
 import { updateAdminLocaleSlug } from '@/src/redux/actions/LocaleAction';
-import { AdminUserDataType, BreadCrumbType, LocaleStateType, LocaleType } from '@/src/types'
 import { useDispatch } from 'react-redux';
 import { IoChevronForwardSharp } from "react-icons/io5";
 import { useSessionStorage } from 'usehooks-ts';
@@ -12,6 +11,8 @@ import { FaPen, FaTrash } from "react-icons/fa";
 import { FaCirclePlus } from "react-icons/fa6";
 import { User } from '../../class';
 import Swal from 'sweetalert2';
+import { BreadCrumbType, LocaleStateType, LocaleType } from '@/src/types/general/type';
+import { AdminUserDataType } from '@/src/types/data/type';
 
 type LayoutProps = {
     activeLocale: LocaleType,
