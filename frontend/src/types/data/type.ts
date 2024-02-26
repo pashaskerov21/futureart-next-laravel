@@ -38,8 +38,22 @@ type SiteSettingTranslateDataType = {
     copyright: string | null,
 }
 
+type MenuDataType = {
+    id: number,
+    slug: string,
+    order: number,
+}
+type MenuTranslateDataType = {
+    id: number,
+    menu_id: number,
+    lang: LocaleType,
+    title: string,
+}
+
 export type {
     AdminUserDataType,
     SiteSettingDataType,
-    SiteSettingTranslateDataType
+    SiteSettingTranslateDataType,
+    MenuDataType,
+    MenuTranslateDataType,
 }

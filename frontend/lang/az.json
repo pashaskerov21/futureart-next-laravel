@@ -34,6 +34,10 @@
         "email_exist": "Bu e-mail istifadə olunub",
         "type": "Növ",
         "site_settings": "Sayt tənzimləmələri",
-        "menu": "Menyu"
+        "menu": "Menyu",
+        "title": "Başlıq",
+        "edit": "Düzəliş et",
+        "delete": "Sil",
+        "sort": "Sırala"
     }
 }

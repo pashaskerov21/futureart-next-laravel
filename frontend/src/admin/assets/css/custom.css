@@ -4,7 +4,7 @@
 .breadcrumb-item svg{
     margin-left: 8px;
 }
-.table-buttons{
+.table_buttons{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;

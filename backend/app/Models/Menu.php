@@ -10,7 +10,10 @@ class Menu extends Model
     use HasFactory;
     protected $fillable = [
         "slug",
-        "sort",
+        "order",
         "destroy"
+    ];
+    protected $hidden = [
+        "destroy",
     ];
 }

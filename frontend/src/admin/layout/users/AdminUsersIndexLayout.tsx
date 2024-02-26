@@ -171,7 +171,7 @@ const AdminUsersIndexLayout: React.FC<LayoutProps> = ({ activeLocale, adminDicti
                                                 <td>{data.user_type}</td>
                                                 <td>
                                                     {
-                                                        <div className="table-buttons">
+                                                        <div className="table_buttons">
 
                                                             {
                                                                 activeUser && (
@@ -179,14 +179,14 @@ const AdminUsersIndexLayout: React.FC<LayoutProps> = ({ activeLocale, adminDicti
                                                                         {
                                                                             data.id === activeUser.id && (
                                                                                 <Fragment>
-                                                                                    <Link href={`/${activeLocale}/admin/dashboard/account`} className='btn btn-success'><FaPen /></Link>
+                                                                                    <Link href={`/${activeLocale}/admin/dashboard/account`} title={adminDictionary['edit']} className='btn btn-success'><FaPen /></Link>
                                                                                 </Fragment>
                                                                             )
                                                                         }
                                                                         {
                                                                             activeUser.user_type === 'admin' && data.id !== activeUser.id && (
                                                                                 <Fragment>
-                                                                                    <button type='button' className='btn btn-danger' onClick={() => handleDelete(data.id)}><FaTrash /></button>
+                                                                                    <button type='button' className='btn btn-danger' title={adminDictionary['delete']} onClick={() => handleDelete(data.id)}><FaTrash /></button>
                                                                                 </Fragment>
                                                                             )
                                                                         }

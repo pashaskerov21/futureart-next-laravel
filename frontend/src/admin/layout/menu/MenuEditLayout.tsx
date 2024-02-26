@@ -1,24 +1,27 @@
 'use client'
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import Link from 'next/link';
 import { i18n } from '@/i18n-config';
 import { updateAdminLocaleSlug } from '@/src/redux/actions/LocaleAction';
 import { useDispatch } from 'react-redux';
 import { IoChevronForwardSharp } from "react-icons/io5";
 import { useRouter } from 'next/navigation';
-import { Settings, User } from '../../class';
-import { SiteSettingEditForm } from '../../form';
 import { BreadCrumbType, LocaleStateType, LocaleType } from '@/src/types/general/type';
-import { SiteSettingDataType, SiteSettingTranslateDataType } from '@/src/types/data/type';
+import { Menu } from '../../class';
+import { MenuDataType, MenuTranslateDataType } from '@/src/types/data/type';
+import { MenuEditForm } from '../../form';
+
 
 type LayoutProps = {
     activeLocale: LocaleType,
     adminDictionary: { [key: string]: string },
+    menuData: MenuDataType,
+    menuTranslateData: MenuTranslateDataType[],
 }
 
-const SiteSettingsLayout: React.FC<LayoutProps> = ({ activeLocale, adminDictionary }) => {
-    const path: string = 'admin/dashboard/settings';
-    const title: string = adminDictionary['site_settings'];
+const MenuEditLayout: React.FC<LayoutProps> = ({ activeLocale, adminDictionary, menuData, menuTranslateData }) => {
+    const path: string = `admin/dashboard/menu/${menuData.id}`;
+    const title: string = `${adminDictionary['menu']} ${adminDictionary['edit']}`;
     const dispatch = useDispatch();
     const localeSlugs: LocaleStateType[] = i18n.locales.map((locale) => {
         return {
@@ -34,6 +37,11 @@ const SiteSettingsLayout: React.FC<LayoutProps> = ({ activeLocale, adminDictiona
         },
         {
             id: 2,
+            title: adminDictionary['menu'],
+            url: `/${activeLocale}/admin/dashboard/menu`,
+        },
+        {
+            id: 3,
             title: title,
             url: `/${activeLocale}/${path}`,
         }
@@ -44,26 +52,8 @@ const SiteSettingsLayout: React.FC<LayoutProps> = ({ activeLocale, adminDictiona
 
 
     const router = useRouter();
-    const setting = new Settings();
+    const menu = new Menu();
 
-    const [settingsData, setSettingsData] = useState<SiteSettingDataType>();
-    const [settingsTranslateData, setSettingsTranslateData] = useState<SiteSettingTranslateDataType[]>();
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const response: {
-                main: SiteSettingDataType,
-                translate: SiteSettingTranslateDataType[]
-            } = await setting.active(1);
-            if (response) {
-                setSettingsData(response.main);
-                setSettingsTranslateData(response.translate);
-            }
-        }
-        fetchData();
-    }, []);
-
-   
 
     return (
         <>
@@ -94,18 +84,14 @@ const SiteSettingsLayout: React.FC<LayoutProps> = ({ activeLocale, adminDictiona
                     </div>
                 </div>
             </div >
-            {
-                settingsData && settingsTranslateData && settingsTranslateData.length === i18n.locales.length && (
-                    <SiteSettingEditForm
-                        activeLocale={activeLocale}
-                        adminDictionary={adminDictionary}
-                        settingsData={settingsData}
-                        settingsTranslateData={settingsTranslateData}
-                    />
-                )
-            }
+            <MenuEditForm
+                activeLocale={activeLocale}
+                adminDictionary={adminDictionary}
+                menuData={menuData}
+                menuTranslateData={menuTranslateData}
+            />
         </>
     )
 }
 
-export default React.memo(SiteSettingsLayout)
+export default React.memo(MenuEditLayout)

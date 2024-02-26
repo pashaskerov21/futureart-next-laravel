@@ -6,6 +6,7 @@ import AdminUsersAddLayout from "./users/AdminUsersAddLayout";
 
 import SiteSettingsLayout from "./settings/SiteSettingsLayout";
 import MenuIndexLayout from "./menu/MenuIndexLayout";
+import MenuEditLayout from "./menu/MenuEditLayout";
 
 export {
     AdminLoginLayout,
@@ -16,4 +17,5 @@ export {
 
     SiteSettingsLayout,
     MenuIndexLayout,
+    MenuEditLayout,
 }

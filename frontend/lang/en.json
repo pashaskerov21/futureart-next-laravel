@@ -34,6 +34,10 @@
         "email_exist": "This e-mail has been used",
         "type": "Type",
         "site_settings": "Site settings",
-        "menu": "Menu"
+        "menu": "Menu",
+        "title": "Title",
+        "edit": "Edit",
+        "delete": "Delete",
+        "sort": "Sort"
     }
 }

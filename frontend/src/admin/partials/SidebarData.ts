@@ -27,13 +27,13 @@ const sidebarData: Array<{
             icon: FaBars,
         },
         {
-            id: 2,
+            id: 3,
             title: 'site_settings',
             url: `settings`,
             icon: FaGear,
         },
         {
-            id: 3,
+            id: 4,
             title: 'users',
             url: `users`,
             icon: HiMiniUsers,

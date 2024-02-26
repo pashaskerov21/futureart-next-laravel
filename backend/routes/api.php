@@ -28,5 +28,6 @@ Route::post('/site/settings/update', [SettingController::class, 'update']);
 Route::post('/site/settings/delete_file', [SettingController::class, 'deleteFile']);
 
 Route::get('/site/menu/all', [MenuController::class, 'all']);
+Route::post('/site/menu/active', [MenuController::class, 'active']);
 Route::post('/site/menu/update', [MenuController::class, 'update']);
 Route::post('/site/menu/sort', [MenuController::class, 'sort']);
